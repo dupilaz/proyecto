@@ -23,6 +23,11 @@
                     <li class="menu"><a href="#">Servicios</a></li>
                     <li class="menu"><a href="formulario">Contacto</a></li>
                     <li class="menu"><a href="">Nosotros</a></li>
+                    {% if 'member_id' in request.session %}
+                    <li class="menu"><a href="">{{user}}</a></li>
+                    
+                    <li class="menu"><a href="">cerrar</a></li>
+                    {% endif %}
                 </ul>
             </div>
             <div style="text-align: end;" class="col-sm-12 col-md-3">

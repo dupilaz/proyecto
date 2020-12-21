@@ -13,6 +13,8 @@ def principal(request):
 def formulario(request):
     form = PostForm()
     return render(request, 'ventas/formulario.html', {'form': form})
+def loguin(request):
+    return render(request, 'ventas/loguin.html', {})    
         
 
 def post_new(request):
@@ -26,4 +28,23 @@ def post_new(request):
             return redirect('/', pk=post.pk)
     else:
         form = PostForm()
-    return render(request, 'ventas/formulario.html', {'form': form})    
+    return render(request, 'ventas/formulario.html', {'form': form})  
+
+
+def login(request):
+    if request.method == "POST":
+        if request.POST['password'] == "123" and request.POST['username']=="oscar":
+            request.session['member_id'] = "oscar"
+            return redirect('/', user=request.session.get('member_id'))
+        else:
+            return redirect('/ventas/loguin')
+    else:
+        form = PostForm()
+    return render(request, 'ventas/loguin.html', {'form': form})  
+
+def logout(request):
+    try:
+        del request.session['member_id']
+    except KeyError:
+        pass
+    return HttpResponse("You're logged out.")           

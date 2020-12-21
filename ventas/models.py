@@ -25,3 +25,10 @@ class consulta(models.Model):
 
     def __str__(self):
         return self.Rut
+class usuario(models.Model):
+
+    usuario=models.CharField(max_length=15)
+    clave=models.CharField(max_length=32)
+    def __str__(self):
+        return self.usuario
+

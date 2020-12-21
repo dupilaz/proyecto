@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="login-form" action="" method="POST">
+        {% csrf_token %}
+        <h1>Login</h1>
+      <label for="username">Username</label>
+        <div class="form-field">
+          
+            <i class="fas fa-user"></i>
+            <input type="text" name="username" id="username" class="form-field" pattern="^[a-zA-Z0-9_-]{1,16}$" placeholder=" " required>
+            
+        </div>
+      <label for="password">Password</label>
+        <div class="form-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="password" id="password" class="form-field" placeholder=" " required>
+            
+        </div>
+      <button type="submit" value="Login" class="btn">Login</button>
+    </form>
+    
+</body>
+</html>
