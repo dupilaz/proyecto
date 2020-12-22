@@ -1,9 +1,130 @@
-<h2>Área para miembros</h2>
+{% load static %}
+{% load widget_tweaks %}
 
-<p>
-    Bienvenido <b>{{request.user.username}}</b>, 
-    esta página es exclusiva para usuarios registrados.
-</p>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/ba09ff24cd.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-<hr />
-<a href="/logout">Cerrar sesión</a>
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="header col-12">
+            <div class="row">
+                <div class="col-sm-12 col-md-3 center">
+                    <img class="logo" src="{% static 'Images/logotipo.png' %}">
+                </div>
+                    
+                <div class="col-12 col-md-6 center">
+                    <ul class="col-md-12">
+                        <li class="menu"><a href="/logout">Cerrar sesión</a></li>
+                        <li class="menu"><a href="#"><b>{{request.user.username}}</b></a></li>
+                    </ul>
+                </div>
+                <div style="text-align: end;" class="col-sm-12 col-md-3">
+
+                    <div class=" col-sm-12">
+                        <a href="https://www.facebook.com/"><img class="web" style="left: auto" src="https://images.vexels.com/media/users/3/137253/isolated/preview/90dd9f12fdd1eefb8c8976903944c026-icono-de-facebook-logo-by-vexels.png"></a>
+                        <a href="https://web.whatsapp.com/"> <img class="web" style="left: auto" src="https://img.icons8.com/plasticine/2x/whatsapp.png"></a>
+                        <a href="https://www.instagram.com/"><img class="web" style="left: auto" src="https://logodownload.org/wp-content/uploads/2017/04/instagram-logo-6.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-12 col-md-8 center" style="background-color: rgb(25, 38, 68); margin: auto;">
+                    
+            <form method="POST" class="post-form">{% csrf_token %}
+                <div class="row">
+                    <div class="col-12 col-md-6 formulario">
+                        <h4>titulo</h4>
+                
+                        {% render_field pro.title placeholder="titulo" %} 
+                
+                        
+                    </div> 
+                    <div class="col-12 col-md-6  formulario">
+                        <h4>texto</h4>
+                        {% render_field pro.text placeholder="texto"%}
+                            
+                    </div>
+                        
+
+                    <div class="col-12 col-md-6  formulario">
+                            <h4>precio</h4>
+                            {% render_field pro.precio placeholder="$99999"%}
+                            
+                    </div>
+                            
+                    <div class="col-12 col-md-6  formulario">
+                        <h4>imagen</h4>
+                        {% render_field pro.imagen placeholder="url"%}
+            
+                    </div>
+                </div>
+                        
+                <div style="margin: 25px;" class="center">
+                    <button type="submit" class="save btn btn-default" style="background-color: purple;height: 50px; width: 80%;" >Enviar</button>
+                            
+                </div>  
+            </form>
+        </div>
+    
+        
+        <div class="footer col-md-12">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-3" >
+                    <ul><h2 style="color: black">Menu</h2>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="servicio">Servicios</a></li>
+                        <li><a href="contacto">Contacto</a></li>
+                        <li><a href="#">Nosotros</a></li>
+        
+                    </ul>  
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-3" >
+                    <ul><h2 style="color: black">servicios</h2>
+                        <li><a href="#">domiciliario</a></li>
+                        <li><a href="#"></a>telefonico</li>
+                        <li><a href="#"></a>local</li>
+        
+                    </ul>  
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-3" >
+                    <ul><h2 style="color: black">horarios</h2>
+                        <li><a href="#">lunea a viernes <br>   
+                        8:00 a 22:00</a></li>
+                        <li><a href="#">sabado a domingo <br>   
+                        9:00 a 21:00</a></li>
+    
+                    </ul>  
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-3" >
+                    <ul><h2 style="color: black">especialistas</h2>
+                        <li><a href="#">miguel sepulveda</a></li>
+                        <li><a href="#">manuel rivas</a></li>
+                        <li><a href="#">juan perez</a></li>
+        
+                    </ul> 
+        
+        
+                </div>
+                <div class="col-12">
+                    <p class="center" style=" color: white;">Antonio Varas 666, Providencia, Región Metropolitana</p>
+                </div>
+                <div style="text-align: end;" class="col-sm-12">
+        
+                    <div class=" col-sm-12">
+                        <a href="https://www.facebook.com/"><img class="web" style="left: auto" src="https://images.vexels.com/media/users/3/137253/isolated/preview/90dd9f12fdd1eefb8c8976903944c026-icono-de-facebook-logo-by-vexels.png"></a>
+                        <a href="https://web.whatsapp.com/"> <img class="web" style="left: auto" src="https://img.icons8.com/plasticine/2x/whatsapp.png"></a>
+                        <a href="https://www.instagram.com/"><img class="web" style="left: auto" src="https://logodownload.org/wp-content/uploads/2017/04/instagram-logo-6.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

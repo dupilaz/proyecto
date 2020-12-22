@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import consulta,usuario
+from .models import Consulta,Usuario,Producto
 
-admin.site.register(consulta)
-admin.site.register(usuario)
+admin.site.register(Consulta)
+admin.site.register(Usuario)
+admin.site.register(Producto)
 

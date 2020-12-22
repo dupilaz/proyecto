@@ -1,12 +1,13 @@
-from django.contrib import admin
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     
-    path('', views.principal, name='principal'),
+    path('', views.producto, name='principal'),
     path('formulario',views.post_new,name='formulario'),
-    path('welcome',views.welcome,name='welcome'),
+    path('welcome',views.post_pro,name='welcome'),
 
 
     #path de los loguin
@@ -16,3 +17,4 @@ urlpatterns = [
     path('logout', views.logout),
 
 ]
+urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_URL)

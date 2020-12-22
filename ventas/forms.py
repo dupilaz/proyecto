@@ -1,15 +1,20 @@
 from django import forms
 
-from .models import consulta,usuario
+from .models import Consulta,Usuario,Producto
 
 
 class PostForm(forms.ModelForm):
     
     class Meta:
-        model = consulta
+        model = Consulta
         fields = ('Rut', 'Nombres','Correo','Telefono','Asunto')
 class Postuser(forms.ModelForm):
-    class meta:
-        model= usuario
-        fields=('usuario','clave')        
+    class Meta:
+        model= Usuario
+        fields=('usuario','clave')    
+
+class Postproducto(forms.ModelForm):
+    class Meta:
+        model= Producto
+        fields=('title','text','precio','imagen')         
     

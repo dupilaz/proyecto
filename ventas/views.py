@@ -1,6 +1,6 @@
 from django.utils import timezone
-from .models import consulta
-from .forms import PostForm
+from .models import Consulta,Producto
+from .forms import PostForm,Postproducto
 from django.contrib.auth import logout as do_logout
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate
@@ -8,7 +8,9 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as do_login
 from django.contrib.auth.forms import UserCreationForm
 
-# ...
+def producto(request):
+    producto=Producto.objects.all()
+    return render(request, 'ventas/principal.html', {"producto":producto}) 
 
 def register(request):
     # Creamos el formulario de autenticación vacío
@@ -64,14 +66,6 @@ def login(request):
     # Si llegamos al final renderizamos el formulario
     return render(request, "ventas/login.html", {'form': form})
 
-def welcome(request):
-    # Si estamos identificados devolvemos la portada
-    if request.user.is_authenticated:
-        return render(request, "ventas/welcome.html")
-    # En otro caso redireccionamos al login
-    return redirect('/login')
-
-
 
 
 def logout(request):
@@ -82,9 +76,26 @@ def logout(request):
 
 
 # Create your views here.
-def principal(request):
-    return render(request, 'ventas/principal.html', {})
 
+
+def welcome(request):
+    pro=postproducto()
+    if request.user.is_authenticated:
+        return render(request, "ventas/welcome.html",{'pro',pro})
+    return redirect('/login')
+
+def post_pro(request):
+    if request.method == "POST":
+        pro = postproducto(request.POST)
+        if pro.is_valid():
+            post = pro.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect('/', pk=post.pk)
+    else:
+        pro = postproducto()
+    return render(request, 'ventas/welcome.html', {'pro': pro})  
 
 def formulario(request):
     form = PostForm()
@@ -111,9 +122,4 @@ def logout(request):
     # Redireccionamos a la portada
     return redirect('/')   
     
-def welcome(request):
-    # Si estamos identificados devolvemos la portada
-    if request.user.is_authenticated:
-        return render(request, "ventas/welcome.html")
-    # En otro caso redireccionamos al login
-    return redirect('/login')     
+     

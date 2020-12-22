@@ -43,6 +43,32 @@ li {
     
   
 }
+.producto{
+   
+    overflow: hidden;
+    color :rgb(25, 38, 68);
+    font-weight: bolder;
+    
+    margin: 30px 50px;
+    padding: 20px;
+    text-align: center; 
+    height: 100px;
+    transition: 4s;
+    transition-delay: 0s;
+    border-radius: 20px;
+}
+@media only screen and (max-width: 768px){
+    .producto{
+        margin:30px auto;
+    }
+}
+
+.producto:hover{
+    color:black;
+    height: 300px;
+    
+}
+
 
 .menu{
     display: inline-block;

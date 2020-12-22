@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 
-class consulta(models.Model):
+class Consulta(models.Model):
     
     
 
@@ -25,10 +25,21 @@ class consulta(models.Model):
 
     def __str__(self):
         return self.Rut
-class usuario(models.Model):
+class Usuario(models.Model):
 
     usuario=models.CharField(max_length=15)
     clave=models.CharField(max_length=32)
     def __str__(self):
         return self.usuario
+
+class Producto(models.Model):
+    
+    title = models.CharField(max_length=200)
+    text = models.CharField(max_length=50)
+    precio = models.CharField(max_length=10)
+    imagen= models.ImageField(null=True ,blank=True)
+        
+    
+    def __str__(self):
+        return self.title        
 
