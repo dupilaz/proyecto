@@ -1,0 +1,12 @@
+<h2>Iniciar sesión</h2>
+{% load widget_tweaks %}
+<form method="POST">
+ 
+    {% render_field form.usuario placeholder="usuario" %} 
+    {% render_field form.vlave placeholder="+++++" %} 
+    {% csrf_token %}
+    <button type="submit">Login</button>
+</form>
+
+<hr />
+<a href="/register">Registrar usuario</a>

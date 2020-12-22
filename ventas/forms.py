@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import consulta
+from .models import consulta,usuario
 
 
 class PostForm(forms.ModelForm):
@@ -8,4 +8,8 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = consulta
         fields = ('Rut', 'Nombres','Correo','Telefono','Asunto')
+class postuser(forms.ModelForm):
+    class meta:
+        model= usuario
+        fields=('usuario','clave')        
     
