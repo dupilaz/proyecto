@@ -59,7 +59,7 @@ def login(request):
                 # Hacemos el login manualmente
                 do_login(request, user)
                 # Y le redireccionamos a la portada
-                return redirect('/')
+                return redirect('/welcome')
 
     # Si llegamos al final renderizamos el formulario
     return render(request, "ventas/login.html", {'form': form})
@@ -70,8 +70,7 @@ def welcome(request):
         return render(request, "ventas/welcome.html")
     # En otro caso redireccionamos al login
     return redirect('/login')
-def register(request):
-    return render(request, "ventas/register.html")
+
 
 
 
@@ -115,6 +114,6 @@ def logout(request):
 def welcome(request):
     # Si estamos identificados devolvemos la portada
     if request.user.is_authenticated:
-        return render(request, "users/welcome.html")
+        return render(request, "ventas/welcome.html")
     # En otro caso redireccionamos al login
     return redirect('/login')     

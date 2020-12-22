@@ -8,7 +8,7 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = consulta
         fields = ('Rut', 'Nombres','Correo','Telefono','Asunto')
-class postuser(forms.ModelForm):
+class Postuser(forms.ModelForm):
     class meta:
         model= usuario
         fields=('usuario','clave')        

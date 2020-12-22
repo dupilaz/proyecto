@@ -1,8 +1,11 @@
+
+{% load widget_tweaks %}
 <h2>Registrar usuario</h2>
 
-<form method="POST">
-    {{ form.as_p }}
+<form method="POST"class="post-form">
     {% csrf_token %}
+    {{ form.as_p }}
+   
     <button type="submit">Registrar</button>
 </form>
 
