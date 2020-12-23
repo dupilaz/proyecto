@@ -36,7 +36,7 @@
         </div>
 
 
-        <div class="col-12 col-md-8 center" style="background-color: rgb(25, 38, 68); margin: auto;">
+        <div class="col-12 col-md-8 col-lg-11 center" style="background-color: rgb(25, 38, 68); margin: auto; padding-bottom:  50px;">
                     
             <form method="POST" class="post-form">{% csrf_token %}
                 <div class="row">
@@ -62,12 +62,12 @@
                             
                     <div class="col-12 col-md-6  formulario">
                         <h4>imagen</h4>
-                        {% render_field pro.imagen placeholder="url"%}
+                        {% render_field pro.imagen placeholder="imagen" %}
             
                     </div>
                 </div>
                         
-                <div style="margin: 25px;" class="center">
+                <div style="margin: 50px 60px;" class="center">
                     <button type="submit" class="save btn btn-default" style="background-color: purple;height: 50px; width: 80%;" >Enviar</button>
                             
                 </div>  
@@ -75,44 +75,7 @@
         </div>
     
         
-        <div class="footer col-md-12">
-            <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-3" >
-                    <ul><h2 style="color: black">Menu</h2>
-                        <li><a href="/">Inicio</a></li>
-                        <li><a href="servicio">Servicios</a></li>
-                        <li><a href="contacto">Contacto</a></li>
-                        <li><a href="#">Nosotros</a></li>
-        
-                    </ul>  
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-3" >
-                    <ul><h2 style="color: black">servicios</h2>
-                        <li><a href="#">domiciliario</a></li>
-                        <li><a href="#"></a>telefonico</li>
-                        <li><a href="#"></a>local</li>
-        
-                    </ul>  
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-3" >
-                    <ul><h2 style="color: black">horarios</h2>
-                        <li><a href="#">lunea a viernes <br>   
-                        8:00 a 22:00</a></li>
-                        <li><a href="#">sabado a domingo <br>   
-                        9:00 a 21:00</a></li>
-    
-                    </ul>  
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-3" >
-                    <ul><h2 style="color: black">especialistas</h2>
-                        <li><a href="#">miguel sepulveda</a></li>
-                        <li><a href="#">manuel rivas</a></li>
-                        <li><a href="#">juan perez</a></li>
-        
-                    </ul> 
-        
-        
-                </div>
+        <div class="footer col-md-12" style=" margin-top: 10%;">
                 <div class="col-12">
                     <p class="center" style=" color: white;">Antonio Varas 666, Providencia, Región Metropolitana</p>
                 </div>
@@ -124,7 +87,7 @@
                         <a href="https://www.instagram.com/"><img class="web" style="left: auto" src="https://logodownload.org/wp-content/uploads/2017/04/instagram-logo-6.png"></a>
                     </div>
                 </div>
-            </div>
+           
         </div>
     </body>
 </html>

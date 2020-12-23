@@ -46,28 +46,31 @@ li {
 .producto{
    
     overflow: hidden;
-    color :rgb(25, 38, 68);
+    color: rgba(0, 0, 0, 0);
     font-weight: bolder;
-    
+    display:inline-block!important;
     margin: 30px 50px;
     padding: 20px;
     text-align: center; 
-    height: 100px;
-    transition: 4s;
-    transition-delay: 0s;
+    height: 300px;
+
     border-radius: 20px;
 }
+
 @media only screen and (max-width: 768px){
     .producto{
         margin:30px auto;
     }
 }
-
 .producto:hover{
-    color:black;
-    height: 300px;
-    
+    color: rgba(0, 0, 0, 1);
+    text-shadow: 2px 2px 1px red;
 }
+.row{
+    margin: 0;
+}
+
+
 
 
 .menu{
@@ -115,7 +118,7 @@ form textarea{
     margin: 0 ,auto;
     height: 40px;
     width: 90%;
-   
+    display: inline;
     background-color:rgb(174, 189, 255) ;
     border: 5px solid purple;
     border-top: none;

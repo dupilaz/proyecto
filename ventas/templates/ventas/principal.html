@@ -20,7 +20,7 @@
             <div class="col-12 col-md-6 center">
                 <ul class="col-md-12">
                     <li class="menu"><a href="/">Inicio</a></li>
-                    <li class="menu"><a href="#">Servicios</a></li>
+                  
                     <li class="menu"><a href="formulario">Contacto</a></li>
                     <li class="menu"><a href="login">inicio secion</a></li>
 
@@ -64,19 +64,20 @@
         </a>
     </div>
 
-
+    <div class="row">
     {% for ser in producto %}
-    <div class="producto col-10 col-sm-5  col-lg-3 col-center" style="background-image: url('{{image}}{{ser.imagen.url}}');" >
+   
+        <div class=" row producto col-8 col-sm-4 col-lg-3 " style="background-image: url('{{MEDIA_URL}}{{ser.imagen.url }}'); margin: auto;"  >
+            
+            
+            <h2>{{ ser.title }} </h2>
+            <p>{{ ser.text}}</p>
+            <h3>{{ ser.precio }}</h3>
         
-        
-        <h2>{{ ser.title }} </h2>
-        <p>{{ ser.text}}</p>
-        <h3>{{ ser.precio }}</h3>
-      
-        
-    </div>      
+        </div>
+         
     {% endfor %}
-
+    </div> 
 
 
 
@@ -91,9 +92,9 @@
             <div class="col-sm-12 col-md-6 col-lg-3" >
                 <ul><h2 style="color: black">Menu</h2>
                      <li><a href="/">Inicio</a></li>
-                     <li><a href="servicio">Servicios</a></li>
+                  
                      <li><a href="contacto">Contacto</a></li>
-                     <li><a href="#">Nosotros</a></li>
+                     <li><a href="login">inicio secion</a></li>
 
                 </ul>  
             </div>

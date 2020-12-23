@@ -25,12 +25,7 @@ class Consulta(models.Model):
 
     def __str__(self):
         return self.Rut
-class Usuario(models.Model):
 
-    usuario=models.CharField(max_length=15)
-    clave=models.CharField(max_length=32)
-    def __str__(self):
-        return self.usuario
 
 class Producto(models.Model):
     

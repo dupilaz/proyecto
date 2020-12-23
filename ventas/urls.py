@@ -17,4 +17,3 @@ urlpatterns = [
     path('logout', views.logout),
 
 ]
-urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_URL)

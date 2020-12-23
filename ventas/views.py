@@ -86,7 +86,7 @@ def welcome(request):
 
 def post_pro(request):
     if request.method == "POST":
-        pro = postproducto(request.POST)
+        pro = Postproducto(request.POST)
         if pro.is_valid():
             post = pro.save(commit=False)
             post.author = request.user
@@ -94,7 +94,7 @@ def post_pro(request):
             post.save()
             return redirect('/', pk=post.pk)
     else:
-        pro = postproducto()
+        pro = Postproducto()
     return render(request, 'ventas/welcome.html', {'pro': pro})  
 
 def formulario(request):
